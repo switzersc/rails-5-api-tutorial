@@ -1,0 +1,257 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://api.booksapp.com/",
+  "resourcePath": "books",
+  "apis": [
+    {
+      "path": "books.json",
+      "operations": [
+        {
+          "summary": "Fetches all Book items",
+          "notes": "This lists all books",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "page",
+              "type": "integer",
+              "description": "Page number",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": "Book",
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "The request you made is not acceptable"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Requested Range Not Satisfiable"
+            }
+          ],
+          "method": "get",
+          "nickname": "Books#index"
+        }
+      ]
+    },
+    {
+      "path": "books.json",
+      "operations": [
+        {
+          "summary": "Creates a new Book",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "title",
+              "type": "string",
+              "description": "Title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "description",
+              "type": "string",
+              "description": "Description",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "page_count",
+              "type": "integer",
+              "description": "Page count",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 201,
+              "responseModel": "Book",
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "post",
+          "nickname": "Books#create"
+        }
+      ]
+    },
+    {
+      "path": "books/{id}.json",
+      "operations": [
+        {
+          "summary": "Fetches a single User item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User Id",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": "Book",
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "get",
+          "nickname": "Books#show"
+        }
+      ]
+    },
+    {
+      "path": "books/{id}.json",
+      "operations": [
+        {
+          "summary": "Creates a new Book",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Book Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "title",
+              "type": "string",
+              "description": "Title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "description",
+              "type": "string",
+              "description": "Description",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "page_count",
+              "type": "integer",
+              "description": "Page count",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 201,
+              "responseModel": "Book",
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "patch",
+          "nickname": "Books#update"
+        }
+      ]
+    },
+    {
+      "path": "books/{id}.json",
+      "operations": [
+        {
+          "summary": "Deletes an existing Book item",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Book Id",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "delete",
+          "nickname": "Books#destroy"
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Book": {
+      "id": "Book",
+      "required": [
+        "id",
+        "title"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Book Id"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description"
+        },
+        "pageCount": {
+          "type": "integer",
+          "description": "Page count"
+        }
+      },
+      "description": "A Tag object."
+    }
+  }
+}

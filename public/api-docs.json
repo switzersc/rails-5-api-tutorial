@@ -1,0 +1,19 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://api.booksapp.com/",
+  "apis": [
+    {
+      "path": "books.{format}",
+      "description": "Books"
+    }
+  ],
+  "info": {
+    "title": "Bookstore App",
+    "description": "This is an API for an online bookstore",
+    "termsOfServiceUrl": "https://github.com/switzersc/rails-5-api-tutorial",
+    "contact": "shelbyswitzer@gmail.com",
+    "license": "Apache 2.0",
+    "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.html"
+  }
+}
